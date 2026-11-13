@@ -1,4 +1,8 @@
 # roblox-up-and-coming-forecast-01: recency-weighted rank-kernel forecaster.
+# Method: per place, each snapshot rank contributes weight
+# 0.5 ** (age_hours / 3) * exp(-(rank - place)^2 / (2 * 3^2)) --
+# a 3-hour recency half-life and a Gaussian kernel of sigma 3 places;
+# named rows per place sum to 0.65, the remaining 0.35 left unnamed.
 #
 # Model-free, deterministic, standard library only, no network.
 #
